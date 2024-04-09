@@ -90,20 +90,40 @@ main {
 }
 
 .sobre-txt a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
     color: #000000;
+    transition: 0.5s ease;
+}
+
+.sobre-txt a:hover {
+    scale: 1.1;
 }
 
 .sobre-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .sobre-txt-links {
     display: flex;
+    flex-direction: column;
     gap: 10px;
+}
+
+.sobre-txt-links a {
+    display: flex;
     align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: 0.5s ease;
+}
+
+.sobre-txt-links a:hover {
+    scale: 1.1;
 }
 
 .logo {
@@ -155,8 +175,12 @@ main {
     font-family: "Playfair Display", serif;
     font-size: 12vw;
     font-weight: 900;
-    margin-bottom: 40px;
     letter-spacing: 1px;
+}
+
+.p-h2 {
+    margin-bottom: 40px;
+    font-size: 3vw;
 }
 
 .section-servicos ul {
@@ -166,17 +190,33 @@ main {
 .section-servicos a {
     text-decoration: none;
     color: #000000;
-    transition: 1s;
+    transition: 0.5s ease;
+    position: relative;
 }
 
 .section-servicos a:hover {
     color: #8d5c00;
 }
 
+.underline:after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0px;
+    position: absolute;
+    background-color: #8d5c00;
+    transition: 0.5s ease;
+}
+
+.underline:hover:after {
+    width: 100%;
+}
+
 .section-servicos ul li {
     font-family: "Poppins", sans-serif;
     font-size: 3.6vw;
-    padding-bottom: 20px;
+    padding-top: 20px;
     letter-spacing: 1px;
     font-weight: 500;
 }
@@ -245,10 +285,16 @@ footer {
 .links-footer-assinatura a {
     text-decoration: none;
     color: #ffffff;
+    
 }
 
-.links-footer-assinatura p {
+.links-footer-assinatura .p {
     font-size: 2vw;
+    transition: 0.5s ease;
+}
+
+.links-footer-assinatura .p:hover {
+    scale: 1.1;
 }
 
 @media (orientation: portrait) {
@@ -256,11 +302,13 @@ footer {
         height: unset;
     }
 
-    .main-title, .main-name {
+    .main-title,
+    .main-name {
         height: 50vh;
     }
 
-    .main-name h2, .main-name a {
+    .main-name h2,
+    .main-name a {
         font-size: 3vw;
     }
 
@@ -303,8 +351,8 @@ footer {
     }
 
     footer {
-        height: 50vh;
         align-items: center;
         justify-content: center;
+        padding-block: 5vh;
     }
 }
